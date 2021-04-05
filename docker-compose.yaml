@@ -2,4 +2,6 @@ version: "3.8"
 services:
     app:
         image: hungnq/nodejs-docker
+        ports: 
+            - "4040:4040"
         restart: unless-stopped
