@@ -1,0 +1,5 @@
+version: "3.8"
+services:
+    app:
+        image: hungnq/nodejs-docker
+        restart: unless-stopped

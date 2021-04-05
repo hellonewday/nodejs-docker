@@ -10,3 +10,4 @@ COPY . .
 EXPOSE 4040
 
 CMD ["npm","start"]
+
