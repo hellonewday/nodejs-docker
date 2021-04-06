@@ -9,14 +9,16 @@ require("dotenv").config();
 mongoose.connect(
   os.platform() === "win32"
     ? `mongodb+srv://${process.env.DB_NAME}:${process.env.DB_PASS}@cluster0-4veva.gcp.mongodb.net/chatops?retryWrites=true&w=majority`
-    : `mongodb://localhost:27017/chatops`,
+    : `mongodb://localhost:27017/books`,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   },
   (error) => {
     if (error) console.log(error);
-    console.log("Connect to database");
+  else {
+     console.log("Connect to database");
+}  
   }
 );
 
