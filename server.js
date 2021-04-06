@@ -6,7 +6,9 @@ const os = require("os");
 const books = require("./api/books");
 require("dotenv").config();
 
-mongoose.connect(`mongodb://db:27017/books`,
+mongoose.connect(os.platform() === "win32"
+? `mongodb+srv://${process.env.DB_NAME}:${process.env.DB_PASS}@cluster0-4veva.gcp.mongodb.net/chatops?retryWrites=true&w=majority`
+: `mongodb://db:27017/books`,
    {
     useNewUrlParser: true,
     useUnifiedTopology: true,
