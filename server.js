@@ -20,8 +20,7 @@ app.post("/compute", (req, res) => {
     .json({ success: true, result: parseInt(a) + parseInt(b) });
 });
 
-app.listen(port, () =>
-  console.log
-    `Listening on + ${os.platform()} server on port ${port}`
-  )
+app.listen(
+  port,
+  () => console.log`Listening on + ${os.platform()} server on port ${port}`
 );
