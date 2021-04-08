@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 3001;
 const os = require("os");
 require("dotenv").config();
 
@@ -22,5 +22,5 @@ app.post("/compute", (req, res) => {
 
 app.listen(
   port,
-  () => console.log`Listening on + ${os.platform()} server on port ${port}`
+  () => console.log(`Listening on + ${os.platform()} server on port ${port}`)
 );
