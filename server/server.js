@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const port = process.env.PORT || 3001;
 const os = require("os");
+const path = require("path");
 require("dotenv").config();
 
 app.use(express.urlencoded({ extended: true }));
@@ -20,7 +21,6 @@ app.post("/compute", (req, res) => {
     .json({ success: true, result: parseInt(a) + parseInt(b) });
 });
 
-app.listen(
-  port,
-  () => console.log(`Listening on + ${os.platform()} server on port ${port}`)
+app.listen(port, () =>
+  console.log(`Listening on + ${os.platform()} server on port ${port}`)
 );
