@@ -4,10 +4,10 @@ WORKDIR /src/client
 
 COPY package.json ./
 
-RUN npm install --only=production && npm run build && npm install -g serve 
+RUN npm install
 
 COPY . . 
 
 EXPOSE 3000
 
-CMD ["serve","-s","build"]
+CMD ["npm","start"]
