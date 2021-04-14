@@ -7,7 +7,7 @@ function App() {
   const [result, setRes] = useState(0);
   useEffect(() => {
     axios
-      .get("/compute")
+      .get("http://203.171.21.65:3002/compute")
       .then((response) => console.log(response.data))
       .catch((error) => console.log(error.response));
   }, []);
@@ -20,7 +20,7 @@ function App() {
     console.log(pair);
     e.preventDefault();
     axios
-      .post("/compute", pair)
+      .post("http://203.171.21.65:3002/compute", pair)
       .then((response) => setRes(response.data.result))
       .catch((error) => console.log(error.response));
   };

@@ -1,0 +1,19 @@
+version: "3.8"
+services:
+  server:
+    image: "quochung5c/compute-js"
+    ports:
+      - "3002:3002"
+    volumes:
+      - .docker/app/server:/app/server
+    restart: "unless-stopped"
+    depends_on:
+      - client
+  client:
+    image: "quochung5c/compute-js-client"
+    ports:
+      - "8000:80"
+    volumes:
+      - .docker/app/client:/app/client
+    restart: "unless-stopped"
+
