@@ -2,11 +2,13 @@ const express = require("express");
 const app = express();
 const port = process.env.PORT || 3002;
 const os = require("os");
+const cors = require("cors");
 const path = require("path");
 require("dotenv").config();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(cors());
 
 app.get("/compute", (req, res) => {
   res.status(200).json({ message: "Compute time" });
