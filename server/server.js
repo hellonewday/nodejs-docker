@@ -10,7 +10,6 @@ app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-
 app.get("/compute", (req, res) => {
   res.status(200).json({ message: "Compute time" });
 });
