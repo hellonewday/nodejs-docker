@@ -1,5 +1,10 @@
 FROM mhart/alpine-node:latest AS builder
 WORKDIR /app
+
+RUN apt-get update
+
+RUN apt-get install ca-certificates
+
 COPY . .
 RUN npm install
 RUN npm run build

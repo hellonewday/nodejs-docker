@@ -1,6 +1,10 @@
 FROM node:14-alpine
 WORKDIR /src/server
 
+RUN apt-get update
+
+RUN apt-get install ca-certificates
+
 COPY package*.json ./
 
 RUN npm install --only=production
