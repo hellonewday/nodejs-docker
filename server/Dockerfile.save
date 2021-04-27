@@ -1,0 +1,12 @@
+FROM node:14-alpine
+WORKDIR /src/server
+
+COPY package*.json ./
+
+RUN npm install --only=production && 
+
+COPY . .
+
+EXPOSE 3002
+
+CMD [ "pm2-runtime", "start", "server.js", "-i", "max" ]

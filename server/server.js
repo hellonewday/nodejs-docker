@@ -6,9 +6,10 @@ const cors = require("cors");
 const path = require("path");
 require("dotenv").config();
 
+app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(cors());
+
 
 app.get("/compute", (req, res) => {
   res.status(200).json({ message: "Compute time" });
