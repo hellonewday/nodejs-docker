@@ -1,36 +1,12 @@
 pipeline {
     agent {
-        docker {
-                        image 'node:lts-buster-slim'
-            args '-p 3002:3002'
-        }
+        docker { image 'node:14-alpine' }
     }
     stages {
-        stage("1. Build front-end"){
-            steps{
-                sh "cd client"
-                sh "yarn install"
-            }
-        }
-
-        stage("2. Build back-end"){
-            steps{
-                sh "cd server"
-                sh "npm install"
-            }
-        }
-
-        stage ("3. Test front-end"){
-            steps{
-                sh "cd client"
-                sh "yarn run test"
-            }
-        }
-
-        stage ("4. Test back-end"){
+        stage('Test') {
             steps {
-                sh "cd server"
-                sh "npm run test"
+		sh 'cd server'
+                sh 'node --version'
             }
         }
     }
